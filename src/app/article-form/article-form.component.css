@@ -1,0 +1,14 @@
+fieldset {
+  display: flex;
+  flex-direction: column;
+
+}
+
+form {
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+
+fieldset label {
+  margin-bottom: 5px;
+}

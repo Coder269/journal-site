@@ -1,0 +1,16 @@
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset label {
+
+  margin-bottom: 5px;
+}
+
+fieldset input {
+
+  margin-bottom: 20px;
+}
+
+

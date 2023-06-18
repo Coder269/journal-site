@@ -1,0 +1,23 @@
+<form #form="ngForm" (ngSubmit)="createComment(form)">
+  <fieldset>
+    <label>Name:</label>
+    <input
+      type="text"
+      ngModel
+      name="author"
+      #author="ngModel"
+      placeholder="Your name"
+    />
+
+    <label>Comment:</label>
+    <textarea
+      ngModel
+      name="comment"
+      #comment="ngModel"
+      cols="30"
+      rows="10"
+    ></textarea>
+  </fieldset>
+  <br />
+  <button type="submit">Add Comment</button>
+</form>

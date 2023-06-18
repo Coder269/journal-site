@@ -1,0 +1,38 @@
+<form #form="ngForm" (ngSubmit)="createArticle(form)">
+  <h3 style="text-align: center">Article Form</h3>
+  <fieldset>
+    <label>Title:</label>
+    <input
+      type="text"
+      ngModel
+      name="title"
+      #title="ngModel"
+      placeholder="article's title"
+    />
+  </fieldset>
+  <fieldset>
+    <label>Author:</label>
+    <input
+      type="text"
+      ngModel
+      name="author"
+      #author="ngModel"
+      placeholder="article's author"
+    />
+  </fieldset>
+
+  <fieldset>
+    <label>Article:</label>
+    <textarea
+      ngModel
+      name="article"
+      #article="ngModel"
+      cols="30"
+      rows="10"
+    ></textarea>
+    <br />
+    <div style="text-align: center">
+      <button type="submit">Create Article</button>
+    </div>
+  </fieldset>
+</form>
