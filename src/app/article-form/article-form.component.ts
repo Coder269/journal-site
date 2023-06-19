@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ArticleService } from '../Services/article.service';
+import { Article } from '../Article';
 
 @Component({
   selector: 'app-article-form',
@@ -8,14 +10,26 @@ import { NgForm } from '@angular/forms';
 })
 export class ArticleFormComponent {
 
-  @Output()
-  createFormEvent = new EventEmitter<NgForm>();
+  articleService: ArticleService;
+
+constructor(articleService: ArticleService) {
+
+  this.articleService = articleService;
+
+}
 
 
 
   createArticle(form: NgForm){
 
-this.createFormEvent.emit(form);
+    let newArticle: Article = {
+      title: form.value.title,
+      author: form.value.author,
+      articleBody: form.value.article,
+      comments: [],
+    };
+
+    this.articleService.addArticle(newArticle);
 
   }
 

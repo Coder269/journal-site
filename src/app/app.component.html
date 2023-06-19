@@ -1,17 +1,22 @@
-<h1 style="text-align: center;">ABBAS Articles</h1>
-<app-article-form (createFormEvent)="onCreateArticle($event)" ></app-article-form>
+<h1 style="text-align: center">ABBAS Articles</h1>
+<app-article-form></app-article-form>
 <div class="article" *ngFor="let article of articles; index as i">
   <app-article
     [title]="article.title"
     [author]="article.author"
     [articleBody]="article.articleBody"
   ></app-article>
+  <div style="text-align: center">
+    <button (click)="onDeleteArticle(i)">Delete Article</button>
+  </div>
   <h2>Comments</h2>
-  <div *ngFor="let comment of article.comments">
+  <div *ngFor="let comment of article.comments; index as j">
     <app-comment
       [author]="comment.author"
       [commentBody]="comment.commentBody"
     ></app-comment>
+    <button (click)="onDeleteComment(i, j)">Delete Comment</button>
   </div>
-  <app-comment-form [articleIndex]="i" (articleIndexEvent)="getArticleIndex($event)" (createCommentEvent)="onCreateComment($event)" ></app-comment-form>
+  <br>
+  <app-comment-form [articleIndex]="i"></app-comment-form>
 </div>
