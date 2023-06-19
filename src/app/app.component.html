@@ -16,6 +16,9 @@
       [commentBody]="comment.commentBody"
     ></app-comment>
     <button (click)="onDeleteComment(i, j)">Delete Comment</button>
+    <textarea *ngIf="modifyComment" id="textArea" cols="30" rows="10"></textarea>
+    <button (click)="onModifyComment(i, j)">Edit Comment</button>
+
   </div>
   <br>
   <app-comment-form [articleIndex]="i"></app-comment-form>

@@ -44,4 +44,10 @@ export class ArticleService {
 
    }
 
+   modifyComment(newComment: string, articleIndex: number, commentIndex: number) {
+
+    this.articles[articleIndex].comments[commentIndex].commentBody = newComment;
+
+   }
+
 }
