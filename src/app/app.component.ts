@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from './Article';
-import { NgForm } from '@angular/forms';
 import { ArticleService } from './Services/article.service';
 
 @Component({
